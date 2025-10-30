@@ -58,15 +58,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'school_project.urls'
 
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # For development only
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://your-react-app.vercel.app",  # Your future React deployment
-]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -171,3 +162,10 @@ REST_FRAMEWORK = {
    
 }
 
+from django.core.management import execute_from_command_line
+
+if os.environ.get('DJANGO_SUPERUSER_USERNAME'):
+    try:
+        execute_from_command_line(['manage.py', 'createsuperuser', '--noinput'])
+    except:
+        pass
