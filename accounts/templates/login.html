@@ -1,0 +1,14 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" class="form-control">
+        <input type="password" name="password" placeholder="password" class="form-control">
+        <button type="submit" class="btn btn-success">Login</button>
+        <diV>if user have not Register
+            <a href="{% url 'register' %}">Register</a>
+    </form>
+</div>
+{% endblock %}
