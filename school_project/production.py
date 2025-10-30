@@ -7,7 +7,7 @@ CSRF_TRUSTED_ORIGINS = ['https://school-management-backend.onrender.com']
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.sqlite',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'render_db',
         'USER': 'render_user',
         'PASSWORD': 'render_password',
