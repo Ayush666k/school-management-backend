@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'accounts',
     'rest_framework',
     'django_filters',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,6 +57,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'school_project.urls'
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # For development only
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://your-react-app.vercel.app",  # Your future React deployment
+]
 
 TEMPLATES = [
     {

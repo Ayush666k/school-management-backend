@@ -1,9 +1,13 @@
 from .settings import *
 
 DEBUG = False
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # For development only
 ALLOWED_HOSTS = [
     'school-management-backend-mibm.onrender.com',
-    '.onrender.com'
+    '.onrender.com',
+    'localhost',
+    '127.0.0.1'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
